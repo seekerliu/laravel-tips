@@ -39,9 +39,14 @@ public function store (Request $request)
     $user->create($data);
 }
 ```
-这种情况下，如果用户提交正确的表单数据，例如： `['name' => 'liu', 'email' => 'liu@seekerliu.com', 'password' => 'test']` ，会新建一个 `普通` 用户。  
-但只要用户在表单中伪造一个 `['is_admin' => 1]` 字段，就能新建一个 `管理员` 用户。
-这种通过将一大堆数据同时传递给模型的 `create()` 方法来新建一行的方式就是 `Mass-Assignment (批量赋值)` 。
+这种情况下，如果用户提交正确的表单数据，例如： 
+```php
+['name' => 'liu', 'email' => 'liu@seekerliu.com', 'password' => 'test']
+```
+会新建一个 `普通` 用户。  
+但只要用户在表单中伪造一个 `['is_admin' => 1]` 字段，就能新建一个 `管理员` 用户。  
+
+#### 将多个字段同时传递给模型 `create()` 方法来新建一行，就是 `Mass-Assignment (批量赋值)` 。
 
 `Laravel` 提供了保护 `Mass-Assignment` 的方法，那就是在模型上定义 `fillable` 或 `guarded` 的属性，例如：
 ```php
