@@ -1,1 +1,3 @@
+[TOC]
+
 # Laravel Tips
