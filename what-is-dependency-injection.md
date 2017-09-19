@@ -1,4 +1,4 @@
-# Laravel 依赖注入 (Dependency Injection) 概念详解
+# Laravel Dependency Injection (依赖注入) 概念详解
 
 >本文翻译自 `Symfony` 作者 Fabien Potencier 的 [《Dependency Injection in general and the implementation of a Dependency Injection Container in PHP》](http://fabien.potencier.org/what-is-dependency-injection.html) 系列文章。
 

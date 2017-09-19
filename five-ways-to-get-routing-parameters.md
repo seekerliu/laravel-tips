@@ -1,4 +1,4 @@
-# Laravel 获取路由参数 (Route Parameters) 的 5 种方法
+# Laravel 获取 Route Parameters (路由参数) 的 5 种方法
 
 > Laravel 获取路由参数的方式有很多，并且有个小坑，汇总如下。
 
