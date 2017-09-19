@@ -24,7 +24,7 @@ $_SESSION['language'] = 'fr';
 $user_language = $_SESSION['language'];
 ```
 
-只能在 `OOP` 开发时中才会遇到 `依赖注入` ，因此假设我们有一个封装 `SESSION` 的 `SessionStorage` 类：
+只有在 `OOP` 开发时中才会遇到 `依赖注入` ，因此假设我们有一个封装 `SESSION` 的 `SessionStorage` 类：
 
 ```php
 class SessionStorage
@@ -175,7 +175,7 @@ $user = new User($storage);
 
 用这个方法，配置 `SessionStorage` 很简单，给 `User` 替换 `$storage` 类型也很简单，都不需要去修改 `User` 类。这就实现了解耦。
 
-`依赖注入` 并不仅于构造函数：
+`依赖注入` 并不限于构造函数：
 
 * Constructor Injection:
 ```php
@@ -213,7 +213,7 @@ class User
 $user->sessionStorage = $storage;
 ```
 
-作为经验， `Constructor 注入` 最适合必须的依赖关系，比如示例中的情况； `Setter 注入` 最适合可选依赖关系，比如缓存一个对象示例。
+作为经验， `Constructor 注入` 最适合必须的依赖关系，比如示例中的情况； `Setter 注入` 最适合可选依赖关系，比如缓存一个对象实例。
 
 现在，大多数现代 PHP 框架都大量使用依赖注入来提供一组 `去耦` 但 `粘合` 的组件：
 
