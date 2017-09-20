@@ -718,7 +718,7 @@ $db = $dbFactory();
 
 ### wrap()
 `wrap` 方法包装一个闭包，以便在执行时依赖关系被注入。 它接受一个数组参数; 返回的闭包不带参数：
-The wrap() method wraps a closure so that its dependencies will be injected when it is executed. The wrap method accepts an array of parameters; the returned closure takes no parameters:
+
 ```php
 $cacheGetter = function (Cache $cache, $key) {
     return $cache->get($key);
