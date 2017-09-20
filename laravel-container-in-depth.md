@@ -65,10 +65,10 @@ $instance = new MyClass(new AnotherClass());
 
 如果 `AnotherClass` 也有 `依赖`，那么 `Container` 会递归注入它所需的依赖。
 
->`Container` 使用 `[Reflection (反射)](http://php.net/manual/zh/book.reflection.php)` 来找到并实例化构造函数参数中的那些类，实现起来并不复杂，以后的文章里再介绍。
+>`Container` 使用 [Reflection (反射)](http://php.net/manual/zh/book.reflection.php) 来找到并实例化构造函数参数中的那些类，实现起来并不复杂，以后的文章里再介绍。
 
 ### 实战
-下面是 `[PHP-DI 文档](http://php-di.org/doc/getting-started.html)` 中的一个例子，它分离了「用户注册」和「发邮件」的过程：
+下面是 [PHP-DI 文档](http://php-di.org/doc/getting-started.html) 中的一个例子，它分离了「用户注册」和「发邮件」的过程：
 ```php
 class Mailer
 {
@@ -369,7 +369,7 @@ $db_name = $container->make('database.name');
 $container['database.name'] = 'testdb';
 $db_name = $container['database.name'];
 ```
->这是因为 `Container` 实现了 PHP 的 `[ArrayAccess](http://php.net/manual/zh/class.arrayaccess.php)` 接口。
+>这是因为 `Container` 实现了 PHP 的 [ArrayAccess](http://php.net/manual/zh/class.arrayaccess.php) 接口。
 
 当处理 `Closure` 绑定的时候，你会发现这个方式非常好用：
 ```php
@@ -468,7 +468,7 @@ class PostController
 $container->singleton('post', PostController::class);
 $container->call('post@index');
 ```
-最后，还可以传一个「默认方法」作为第三个参数。如果第一个参数是没有指定方法的类名称，则将调用默认方法。 `Laravel` 用这种方式来处理 `[event handlers](https://laravel.com/docs/5.5/events#registering-events-and-listeners)` :
+最后，还可以传一个「默认方法」作为第三个参数。如果第一个参数是没有指定方法的类名称，则将调用默认方法。 `Laravel` 用这种方式来处理 [event handlers](https://laravel.com/docs/5.5/events#registering-events-and-listeners) :
 ```php
 $container->call(MyEventHandler::class, $parameters, 'handle');
 
@@ -496,10 +496,10 @@ $container->call([new PostController, 'index']);
 ```php
 $container->call('PostController@index', ['Not used :-(']);
 ```
->注意：这种方式不是 `[Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php)` 的一部分，只有在它的实现类 `[Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php)` 才有。在这个 `[PR](https://github.com/laravel/framework/pull/16800)` 里可以看到它加了什么以及为什么参数被忽略。
+>注意：这种方式不是 [Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php) 的一部分，只有在它的实现类 [Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php) 才有。在这个 [PR](https://github.com/laravel/framework/pull/16800)` 里可以看到它加了什么以及为什么参数被忽略。
 
 ## 技能D：Contextual Bindings (上下文绑定)
-有时候你想在不同的地方给接口不同的实现。这里有 `[Laravel 文档](https://laravel.com/docs/5.5/container#contextual-binding)` 里的一个例子：
+有时候你想在不同的地方给接口不同的实现。这里有 [Laravel 文档](https://laravel.com/docs/5.5/container#contextual-binding) 里的一个例子：
 ```php
 $container
     ->when(PhotoController::class)
@@ -634,7 +634,7 @@ $container->singleton(Auth::class, function (Container $container) {
 });
 ```
 
->注意：这种方式不是 `[Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php)` 的一部分，只有在它的实现类 `[Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php)` 才有。
+>注意：这种方式不是 [Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php) 的一部分，只有在它的实现类 [Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php) 才有。
 
 ## 技能J：Overriding Constructor Parameters (重写构造函数参数)
 `makeWith` 方法允许将附加参数传递给构造函数。它忽略任何现有的实例或单例，可以用于创建具有不同参数的类的多个实例，同时仍然注入依赖关系：
@@ -731,7 +731,7 @@ $username = $usernameGetter();
 
 我也不知道它有啥用，因为返回的闭包没带回参数。。。
 
->注意：这个方法不是 `[Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php)` 的一部分，只有在它的实现类 `[Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php)` 才有。
+>注意：这个方法不是 [Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php)` 的一部分，只有在它的实现类 [Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php) 才有。
 
 ### afterResolving()
 `afterResolving()` 方法作用与 `resolving()` 完全相同，不同之处是 调用 「resolving」回调之后再调用 「afterResolving」回调。  
@@ -749,4 +749,4 @@ $username = $usernameGetter();
 `flush()` - 清除所有绑定和实例，有效地重置容器
 `setInstance()` - 替换 `getInstance()` 使用的实例 (提示：使用 setInstance(null)来清除它，这样下一次它将生成一个新的实例)
 
->注意：这些方法不是 `[Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php)` 的一部分，只有在它的实现类 `[Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php)` 才有。
+>注意：这些方法不是 [Container 接口](https://github.com/laravel/framework/blob/5.5/src/Illuminate/Contracts/Container/Container.php) 的一部分，只有在它的实现类 [Container](https://github.com/laravel/framework/blob/5.4/src/Illuminate/Container/Container.php) 才有。
