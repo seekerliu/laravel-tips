@@ -326,7 +326,7 @@ $container->singleton(Cache::class, RedisCache::class);
 ```
 绑定单例 `闭包`：
 ```php
-container->singleton(Database::class, function (Container $container) {
+$container->singleton(Database::class, function (Container $container) {
     return new MySQLDatabase('localhost', 'testdb', 'user', 'pass');
 });
 ```
@@ -513,7 +513,7 @@ $container
 ```
 现在 `PhotoController` 和 `VideoController` 都依赖了 `Filesystem` 接口，但是收到了不同的实例。
 
-可以像 `bing()` 那样，给 `give()` 传闭包：
+可以像 `bind()` 那样，给 `give()` 传闭包：
 ```php
     ->when(VideoController::class)
     ->needs(Filesystem::class)
