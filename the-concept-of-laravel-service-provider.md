@@ -314,3 +314,7 @@ class MyController extends Controller
         \Hash::make('teststring');
     }
 }
+```
+
+以上就是 `Laravel Service Provider` 概念的简单介绍，更深入的了解可以看看「點燈坊」的这篇文章：
+[http://oomusou.io/laravel/laravel-service-provider/](http://oomusou.io/laravel/laravel-service-provider/) 。
