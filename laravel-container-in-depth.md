@@ -1,5 +1,7 @@
 # Laravel Container (容器) 深入理解 (下)
 
+[TOC]
+
 >本文大部分翻译自 DAVE JAMES MILLER 的 [《Laravel’s Dependency Injection Container in Depth》](https://davejamesmiller.com/2017/06/15/laravel-illuminate-container-in-depth) 。
 
 上文介绍了 `Dependency Injection Containers (容器)` 的基本概念，现在接着深入讲解 `Laravel` 的 `Container`。
@@ -320,11 +322,11 @@ $instance = $container->make(User::class);
 ```
 
 ## 技能U：单例
-使用 `bind()` 方法绑定后，每次解析时都会新实例化一个对象(或重新调用闭包)，如果想获取 `单例` ，则用 `signleton()` 方法代替 `bind()`：
+使用 `bind()` 方法绑定后，每次解析时都会新实例化一个对象(或重新调用闭包)，如果想获取 `单例` ，则用 `singleton()` 方法代替 `bind()`：
 ```php
 $container->singleton(Cache::class, RedisCache::class);
 ```
-绑定单例 `闭包`：
+绑定单例 `闭包`
 ```php
 $container->singleton(Database::class, function (Container $container) {
     return new MySQLDatabase('localhost', 'testdb', 'user', 'pass');
@@ -656,7 +658,7 @@ $post2 = $container->makeWith(Post::class, ['id' => 2]);
 这涵盖了我认为有用的所有方法，但仅仅是简介，不然这篇文章就写不完了。。。
 
 ### bound()
-如果一个类/名称已经被 `bind()` , `signleton()` ，`instance()` 或 `alias()` 绑定，那么 `bound()` 方法返回 `true`。
+如果一个类/名称已经被 `bind()` , `singleton()` ，`instance()` 或 `alias()` 绑定，那么 `bound()` 方法返回 `true`。
 ```php
 if (! $container->bound('database.user')) {
     // ...
@@ -739,7 +741,7 @@ $username = $usernameGetter();
 
 # 最后再附几个
 
-`isShared()` – 确定一个给定的类型是一个 signleton/instance
+`isShared()` – 确定一个给定的类型是一个 singleton/instance
 `isAlias()` – 确定给定的字符串是否是已注册的 `别名`
 `hasMethodBinding()` - 确定容器是否具有给定的 `method binding`
 `getBindings()` - 取回所有已注册绑定的原始数组
