@@ -4,9 +4,7 @@
 
 先看下 `Laravel` [文档](https://laravel.com/docs/5.5/providers)中这句话：
 
-```
-Service providers are the central place of all Laravel application bootstrapping. Your own application, as well as all of Laravel's core services are bootstrapped via service providers.
-```
+> Service providers are the central place of all Laravel application bootstrapping. Your own application, as well as all of Laravel's core services are bootstrapped via service providers.
 
 `Service Providers (服务提供者)` 是 `Laravel` 「引导」过程的核心。这个「引导」过程可以理解成「电脑从按下开机按钮到完全进入桌面」这段时间系统干的事。
 
