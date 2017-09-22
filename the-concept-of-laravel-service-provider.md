@@ -195,7 +195,7 @@ class ComposerServiceProvider extends ServiceProvider
 
 如果了解 `Container` 「绑定」 和 `make` 的概念，应该很容易理解上面的过程。
 
-剩余只是无非就是：
+剩下的无非就是：
 ### 创建 `Service Provier`
 ```bash
 php artisan make:provider MyServiceProvider
