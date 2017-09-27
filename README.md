@@ -5,3 +5,4 @@
 4. [Laravel Container (容器) 概念详解 (上)](https://github.com/seekerliu/laravel-tips/blob/master/do-you-need-a-dependency-injection-container.md)
 5. [Laravel Container (容器) 深入理解 (下)](https://github.com/seekerliu/laravel-tips/blob/master/laravel-container-in-depth.md)
 6. [Laravel Service Provider 概念详解](https://github.com/seekerliu/laravel-tips/blob/master/the-concept-of-laravel-service-provider.md)
+7. [Laravel Query Builder & Eloquent ORM 介绍 (上)](https://github.com/seekerliu/laravel-tips/blob/master/introduction-to-query-builder-and-eloquent.md)
