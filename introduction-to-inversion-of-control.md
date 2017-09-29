@@ -1,4 +1,4 @@
-#Laravel Inversion of Control (控制反转) 概念简介
+# Laravel Inversion of Control (控制反转) 概念简介
 
 >本文内容部分摘自 Wikipedia - [Inversion of Control](https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC) .
 
