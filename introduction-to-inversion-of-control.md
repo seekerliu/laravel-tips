@@ -60,6 +60,12 @@ class iPhone
 }
 ```
 
+```php
+// 充电
+$iphone = new iPhone;
+$iphone->charge();
+```
+
 使用依赖注入之后，我来决定给 iPhone 用哪一款充电器：
 ```php
 class iPhone
