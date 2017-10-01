@@ -6,6 +6,8 @@
 * Query Builder - 查询构造器
 * Eloquent ORM
 
+![Database operations in Laravel](./introduction-to-query-builder-and-eloquent-1.png)
+
 我们可以单独使用这两个功能，或两者结合起来，以更灵活的进行数据库操作。下面来看看它们的区别。
 
 ## Query Builder
