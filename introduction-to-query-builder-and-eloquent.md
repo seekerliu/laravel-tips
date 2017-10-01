@@ -1,4 +1,4 @@
-# Laravel Query Builder & Eloquent ORM 介绍 (上)
+# Laravel Query Builder & Eloquent ORM 介绍
 
 >本文翻译自 [《Laravel - My first framework》](https://leanpub.com/laravel-first-framework/)
 
