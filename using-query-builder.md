@@ -86,7 +86,7 @@ DB::table('orders')->insert(
 `Query Builder`将 `insert` 命令转换为特定于 `database.php` 配置文件中指定的数据库的 SQL 查询。 作为参数传递给 `insert` 命令的数据将以参数的形式放入 SQL 查询中。 然后，SQL 查询将在指定的表 "orders" 上执行，执行结果将返回给调用者。  
 下图说明了整个过程：
 
-![Behind the scenes process of running “insert” operator](./using-query-builder-2.png)
+![Behind the scenes process of running “insert” operator](./figures/using-query-builder-2.png)
 
 >可以看到，Laravel 使用 PDO 来执行 SQL 语句。通过为数据添加占位符来使用准备好的语句可以增强 SQL 注入的保护性，并增加数据插入和更新的安全性。
 
