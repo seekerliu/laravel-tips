@@ -4,7 +4,7 @@
 
 从 `CURD` 到 `排序` 和 `过滤`，`Query Builder` 提供了方便的操作符来处理数据库中的数据。这些操作符大多数可以组合在一起，以充分利用单个查询。
 
-`Laravel` 一般使用 `DB` facade 来进行数据库查询。当我们执行 `DB` 的「命令」(、或者说「操作符」)时，`Query Builder` 会构建一个 SQL 查询，该查询将根据 `table()` 方法中指定的表执行查询。
+`Laravel` 一般使用 `DB` facade 来进行数据库查询。当我们执行 `DB` 的「命令」(或者说「操作符」)时，`Query Builder` 会构建一个 SQL 查询，该查询将根据 `table()` 方法中指定的表执行查询。
 
 ![Executing database operations using Query Builder](./figures/using-query-builder-1.png)
 
