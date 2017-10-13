@@ -8,3 +8,4 @@
 7. [Laravel Inversion of Control (控制反转) 概念简介](./introduction-to-inversion-of-control.md)
 8. [Laravel Query Builder & Eloquent ORM 介绍](./introduction-to-query-builder-and-eloquent.md)
 9. [Laravel Query Builder 原理及用法](./using-query-builder.md)
+10. [Laravel Eloquent 用法](./using-eloquent.md)
