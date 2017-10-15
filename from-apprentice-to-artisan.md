@@ -1,6 +1,6 @@
 # Laravel - From Apprentice To Artisan, by Taylor Otwell.
 
-《From Apprentice To Artisan》这本书是 Laravel 作者 Taylor Otwell 写的，里面详细介绍了 Laravel 框架涉及的各种软件理念和工具，如依赖注入、控制反转容器、面向接口编程等。
+《From Apprentice To Artisan》这本书是 Laravel 作者 Taylor Otwell 写的，里面详细介绍了 Laravel 框架涉及的各种软件理念和工具，如 DI、IoC、SOLID 等。
 
 最近才发现这本书，本想着手翻译，才发现有大神在三年前就翻译好了，所以只贴个目录在这儿吧~
 
