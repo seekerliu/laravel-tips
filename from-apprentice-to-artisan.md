@@ -4,8 +4,8 @@
 
 最近才发现这本书，本想着手翻译，才发现有大神在三年前就翻译好了，所以只贴个目录在这儿吧~
 
-英文正版链接：https://leanpub.com/laravel
-zgldh 大神翻译的中文版链接：https://my.oschina.net/zgldh/blog/389246
+英文正版链接：https://leanpub.com/laravel  
+zgldh 大神翻译的中文版链接：https://my.oschina.net/zgldh/blog/389246  
 huanghua581 大神制作的 Gitbook 版：https://huanghua581.github.io/FATA/
 
 >目录
