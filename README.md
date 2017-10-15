@@ -9,3 +9,4 @@
 8. [Laravel Query Builder & Eloquent ORM 介绍](./introduction-to-query-builder-and-eloquent.md)
 9. [Laravel Query Builder 原理及用法](./using-query-builder.md)
 10. [Laravel Eloquent 用法](./using-eloquent.md)
+11. [Laravel - From Apprentice To Artisan, by Taylor Otwell](./from-apprentice-to-artisan.md)
