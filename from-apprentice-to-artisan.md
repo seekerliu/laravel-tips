@@ -8,7 +8,7 @@
 zgldh 大神翻译的中文版链接：https://my.oschina.net/zgldh/blog/389246
 huanghua581 大神制作的 Gitbook 版：https://huanghua581.github.io/FATA/
 
-目录
+>目录
 
 *   Dependency Injection 依赖注入
     *   The Problem 遇到的问题
@@ -45,6 +45,9 @@ huanghua581 大神制作的 Gitbook 版：https://huanghua581.github.io/FATA/
     *   Authentication 身份认证
     *   IoC Based Extension 使用容器进行扩展
     *   Request Extension 请求的扩展
+
+>以下是 SOLID 的讲解。
+
 *   Single Responsibility Principle 单一职责原则
     *   Introduction 介绍
     *   In Action 实践
