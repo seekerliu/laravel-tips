@@ -39,21 +39,23 @@ return $user->avatar->url ?? 'defaultUrl';
 ```
 /**
  * 如果给定的对象是 null ， 那么属性和方法会简单地返回 null 而不是产生一个错误：
- * 详见 https://laravel-china.org/docs/laravel/5.7/helpers/1320#method-optional
  */
 return optional($user->avatar)->url;
 ```
+
+详见 [https://laravel-china.org/docs/laravel/5.7/helpers/1320#method-optional](https://laravel-china.org/docs/laravel/5.7/helpers/1320#method-optional)
 
 `Laravel 5.7` 中，`optional` 函数还可以接受 `匿名函数` 作为第二个参数：
 ```
 /**
  * 如果第一个参数不为 null, 则调用闭包
- * 详见 https://laravel.com/docs/5.7/helpers#method-optional
  */
 return optional(User::find($id), function ($user) {
     return new DummyUser;
 });
 ```
+
+详见 [https://laravel.com/docs/5.7/helpers#method-optional](详见 https://laravel.com/docs/5.7/helpers#method-optional)
 
 ## 4.除此之外，还可以使用 `Null Object Pattern(空对象模式)`:
 [《點燈坊:如何實現 Null Object Pattern ?》](https://oomusou.io/design-pattern/nullobject/)
