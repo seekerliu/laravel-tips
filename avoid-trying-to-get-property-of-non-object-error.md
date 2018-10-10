@@ -1,4 +1,4 @@
-# Laravel 避免 Trying to get property of non-object 错误的四种办法
+# Laravel 避免 Trying to get property of non-object 错误的四种方法
 
 在使用链式操作的时候，例如：
 
