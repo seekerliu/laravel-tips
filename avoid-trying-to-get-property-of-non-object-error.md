@@ -29,13 +29,13 @@ else
 echo e(isset($user->avatar->url) ? $user->avatar->url : 'defaultUrl');
 ```
 
-## 2. `PHP7` 以上可以使用 `?? (NULL 合并操作符)` :
+## 2. `PHP7` 可以使用 `?? (NULL 合并操作符)` :
 ```
 // 如果 $user->avatar->url 为 null, 返回 'defaultUrl'
 return $user->avatar->url ?? 'defaultUrl';
 ```
 
-## 3. `Laravel 5.5` 以上可以使用 `optional` 辅助函数：
+## 3. `Laravel 5.5` 及以上可以使用 `optional` 辅助函数：
 ```
 /**
  * 如果给定的对象是 null ， 那么属性和方法会简单地返回 null 而不是产生一个错误：
