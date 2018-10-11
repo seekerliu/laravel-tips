@@ -29,6 +29,8 @@ else
 echo e(isset($user->avatar->url) ? $user->avatar->url : 'defaultUrl');
 ```
 
+>  `Laravel 5.7` 已经取消了这个特性。详见：[https://github.com/laravel/framework/pull/23532](https://github.com/laravel/framework/pull/23532) 。感谢 [@jltxwesley](https://laravel-china.org/users/28596) 提醒。
+
 ## 2. `PHP7` 可以使用 `?? (NULL 合并操作符)` :
 ```
 // 如果 $user->avatar->url 为 null, 返回 'defaultUrl'
