@@ -1,4 +1,4 @@
-# Laravel 避免 Trying to get property of non-object 错误的四种方法
+# Laravel 避免 Trying to get property of non-object 错误的五种方法
 
 在使用链式操作的时候，例如：
 
@@ -59,7 +59,52 @@ return optional(User::find($id), function ($user) {
 
 详见 [https://laravel.com/docs/5.7/helpers#method-optional](详见 https://laravel.com/docs/5.7/helpers#method-optional)
 
-## 4.除此之外，还可以使用 `Null Object Pattern(空对象模式)`:
+## 4. 使用 `object_get` 辅助函数
+```
+return object_get($user->avatar, 'url', 'default');
+```
+
+这个函数原意是用来已 `.` 语法来获取对象中的属性，例如：
+```
+return object_get($user, 'avatar.url', 'default');
+```
+
+也可以达到避免 `non-object` 错误的效果。
+
+```
+if (! function_exists('object_get')) {
+    /**
+     * Get an item from an object using "dot" notation.
+     *
+     * @param  object  $object
+     * @param  string  $key
+     * @param  mixed   $default
+     * @return mixed
+     */
+    function object_get($object, $key, $default = null)
+    {
+        if (is_null($key) || trim($key) == '') {
+            return $object;
+        }
+
+        foreach (explode('.', $key) as $segment) {
+            if (! is_object($object) || ! isset($object->{$segment})) {
+                return value($default);
+            }
+
+            $object = $object->{$segment};
+        }
+
+        return $object;
+    }
+}
+```
+
+详见 [https://github.com/laravel/framework/blob/master/src/Illuminate/Support/helpers.php#L673](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/helpers.php#L673)
+
+> 感谢 [@lovecn](https://laravel-china.org/users/87) 提供姿势！
+
+## 5.除此之外，还可以使用 `Null Object Pattern(空对象模式)`:
 [《點燈坊:如何實現 Null Object Pattern ?》](https://oomusou.io/design-pattern/nullobject/)
 
 感谢群里大佬 @盒子 和 @Outshine 提供的姿势。:kissing: :kissing: :kissing:

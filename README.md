@@ -10,5 +10,5 @@
 9. [Laravel Query Builder 原理及用法](./using-query-builder.md)
 10. [Laravel Eloquent 用法](./using-eloquent.md)
 11. [Laravel - From Apprentice To Artisan, by Taylor Otwell](./from-apprentice-to-artisan.md)
-12. [Laravel 避免 Trying to get property of non-object 错误的四种方法](./avoid-trying-to-get-property-of-non-object-error.md)
+12. [Laravel 避免 Trying to get property of non-object 错误的五种方法](./avoid-trying-to-get-property-of-non-object-error.md)
 13. [Laravel 配置 valet, PHPStorm, xdebug, PHPUnit, qcachegrind(mac)环境](./valet-phpstorm-xdebug-phpunit-qcachegrind(mac).md)
