@@ -11,7 +11,7 @@ Trying to get property 'url' of non-object` 错误。
 
 ## 1. 常规方法是使用 `isset` 加以判断：
 ```
-if(isset($user->avatar->url)
+if(isset($user->avatar->url))
     return $user->avatar->url;
 else
     return 'defaultUrl';
