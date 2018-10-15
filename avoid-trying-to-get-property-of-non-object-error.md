@@ -1,4 +1,4 @@
-# Laravel 避免 Trying to get property of non-object 错误的五种方法
+# Laravel 避免 Trying to get property of non-object 错误的六种方法
 
 在使用链式操作的时候，例如：
 
@@ -64,7 +64,8 @@ return optional(User::find($id), function ($user) {
 return object_get($user->avatar, 'url', 'default');
 ```
 
-这个函数原意是用来已 `.` 语法来获取对象中的属性，例如：
+这个函数原意是用来以 `.` 语法来获取对象中的属性，例如：
+
 ```
 return object_get($user, 'avatar.url', 'default');
 ```
@@ -104,7 +105,67 @@ if (! function_exists('object_get')) {
 
 > 感谢 [@lovecn](https://laravel-china.org/users/87) 提供姿势！
 
-## 5.除此之外，还可以使用 `Null Object Pattern(空对象模式)`:
+ 
+## 5. 使用 `data_get` 辅助函数
+```
+return data_get($user, 'avatar.url', 'default');
+```
+
+或
+
+```
+return data_get($user, ['avatar', 'url'], 'default');
+```
+
+以 `.` 语法来获取对象属性或数组元素。
+
+```
+if (! function_exists('data_get')) {
+    /**
+     * Get an item from an array or object using "dot" notation.
+     *
+     * @param  mixed   $target
+     * @param  string|array  $key
+     * @param  mixed   $default
+     * @return mixed
+     */
+    function data_get($target, $key, $default = null)
+    {
+        if (is_null($key)) {
+            return $target;
+        }
+        $key = is_array($key) ? $key : explode('.', $key);
+        while (! is_null($segment = array_shift($key))) {
+            if ($segment === '*') {
+                if ($target instanceof Collection) {
+                    $target = $target->all();
+                } elseif (! is_array($target)) {
+                    return value($default);
+                }
+                $result = [];
+                foreach ($target as $item) {
+                    $result[] = data_get($item, $key);
+                }
+                return in_array('*', $key) ? Arr::collapse($result) : $result;
+            }
+            if (Arr::accessible($target) && Arr::exists($target, $segment)) {
+                $target = $target[$segment];
+            } elseif (is_object($target) && isset($target->{$segment})) {
+                $target = $target->{$segment};
+            } else {
+                return value($default);
+            }
+        }
+        return $target;
+    }
+}
+```
+
+详见 [https://github.com/laravel/framework/blob/master/src/Illuminate/Support/helpers.php#L450](https://github.com/laravel/framework/blob/master/src/Illuminate/Support/helpers.php#L450)
+
+> 感谢 [@Hachiko](https://laravel-china.org/users/22249) 提供姿势！
+
+## 6.除此之外，还可以使用 `Null Object Pattern(空对象模式)`:
 [《點燈坊:如何實現 Null Object Pattern ?》](https://oomusou.io/design-pattern/nullobject/)
 
 感谢群里大佬 @盒子 和 @Outshine 提供的姿势。:kissing: :kissing: :kissing:
