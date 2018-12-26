@@ -12,4 +12,4 @@
 11. [Laravel - From Apprentice To Artisan, by Taylor Otwell](./from-apprentice-to-artisan.md)
 12. [Laravel 避免 Trying to get property of non-object 错误的六种方法](./avoid-trying-to-get-property-of-non-object-error.md)
 13. [Laravel 配置 valet, PHPStorm, xdebug, PHPUnit, qcachegrind(mac)环境](./valet-phpstorm-xdebug-phpunit-qcachegrind(mac).md)
-14. [Laravel 需要用到的一些国内镜像配置以及代理设置](./China-mirrors-of-some-useful-packages(mac).md)
+14. [Laravel 常用命令的国内镜像配置以及iTerm2的SS代理设置](./China-mirrors-of-some-useful-packages(mac).md)
