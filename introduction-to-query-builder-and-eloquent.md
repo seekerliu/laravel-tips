@@ -42,7 +42,7 @@ $averagePrice = DB::table('orders')->avg('price');
 
 // 查找 orders 表中所有 price 等于 50 的记录
 // 把他们 product 字段改为 Laptop
-// proce 字段改为 400
+// price 字段改为 400
 DB::table('orders')
   ->where('price', 50)
   ->update(['product' => 'Laptop', 'price' => 400]);
