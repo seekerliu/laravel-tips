@@ -2,7 +2,7 @@
 
 本文档试用与Mac OS，终端是zsh
 
-##Homebrew使用国内镜像
+## Homebrew使用国内镜像
 (1) 使用中科大源
 
 * 第一步：替换brew.git
@@ -88,7 +88,7 @@ cd
 brew update
 ```
 第三步：注释掉配置文件里的有关Homebrew Bottles即可恢复官方源。 重启终端或iterms2重读配置文件。
-##Composer使用国内镜像
+## Composer使用国内镜像
 
 * 全局配置
 
@@ -111,7 +111,7 @@ composer config -g --unset repos.packagist
 ```shell
 composer -vvv create-project laravel/laravel blog
 ```
-##npm使用国内镜像
+## npm使用国内镜像
 
 使用定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm
 
@@ -129,7 +129,9 @@ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taobao.
   --disturl=https://npm.taobao.org/dist \
   --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
 ```
-##iTerms2使用终端通过ss代理
+## iTerms2使用终端通过ss代理
+
+前提是shadow socks已经打开到pac自动模式
 
 直接将下面的命令复制粘贴到~/.zshrc 文件的末尾
 
