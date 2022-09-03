@@ -166,7 +166,7 @@ if (! function_exists('data_get')) {
 > 感谢 [@Hachiko](https://laravel-china.org/users/22249) 提供姿势！
 
 ## 6.除此之外，还可以使用 `Null Object Pattern(空对象模式)`:
-[《點燈坊:如何實現 Null Object Pattern ?》](https://oomusou.io/design-pattern/nullobject/)
+[《點燈坊:如何實現 Null Object Pattern ?》](https://old-oomusou.goodjack.tw/design-pattern/nullobject/)
 
 感谢群里大佬 @盒子 和 @Outshine 提供的姿势。:kissing: :kissing: :kissing:
 
